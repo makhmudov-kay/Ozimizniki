@@ -1,0 +1,199 @@
+.ant-layout-footer {
+    padding: 0;
+}
+
+.footer {
+    background: #F5F5F5;
+    padding-top: 74px;
+    padding-bottom: 62px;
+    font-family: Ubuntu;
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-left: 35px;
+
+        @media(max-width: 790px) {
+            justify-content: space-evenly;
+        }
+        @media(max-width: 627px) {
+            text-align: center;
+        }
+        @media(max-width: 480px) {
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        h5 {
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 500;
+            color: #aaa;
+        }
+    }
+
+    &__logo {
+        padding-right: 20px;
+        @media(max-width: 790px) {
+            margin-bottom: 20px;
+        }
+
+        @media(max-width: 480px) {
+            padding-right: 0;
+        }
+    }
+
+    &__links {
+        padding-right: 20px;
+        @media(max-width: 790px) {
+            margin-bottom: 20px;
+        }
+        @media(max-width: 480px) {
+            padding-right: 0;
+        }
+    }
+
+    &__about {
+        padding-right: 20px;
+        @media(max-width: 790px) {
+            margin-bottom: 20px;
+        }
+        @media(max-width: 480px) {
+            padding-right: 0;
+        }
+    }
+
+    &__license {
+        max-width: 267px;
+        width: 100%;
+        font-size: 12px;
+        line-height: 20px;
+        color: #999;
+        margin-top: 34px;
+        @media(max-width: 480px) {
+            margin: auto;
+            margin-top: 15px;
+            text-align: center;
+        }
+    }
+    
+
+    &__list {
+        margin-top: 26px;
+        li {            
+            margin-bottom: 20px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            a {
+                font-size: 14px;
+                line-height: 14px;
+                
+                font-weight: 400;
+                color: #000;
+                transition: 0.3s;
+
+                &:hover {
+                    color: #377BE1;
+                }
+            }
+        }
+    }
+
+    &__support {
+        @media(max-width: 790px) {
+            margin-bottom: 20px;
+        }
+        h5 {
+            margin-bottom: 3px;
+        }
+
+        &-call-center {
+            margin-bottom: 15px;
+            a {
+                font-size: 18px;
+                line-height: 24px;
+                color: #000;
+                transition: 0.5s;
+
+                &:hover {
+                    color: #377BE1;
+                }
+            }
+        }
+
+        &-tg-bot {
+            margin-bottom: 17px;
+            a {
+                font-size: 18px;
+                line-height: 24px;
+                color: #000;
+                transition: 0.5s;
+                position: relative;
+                padding-left: 11px;
+                &:hover {
+                    color: #377BE1;
+                }
+
+                &::before {
+                    content: "";
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background: #00CC69;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        &-media {
+            ul {
+                display: flex;
+
+    
+                li {
+                    margin-right: 20px;
+                    
+                    @media(max-width: 627px) {
+                        margin: auto;
+                    }
+                    @media(max-width: 480px) {
+                        margin: auto;
+                    }
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+
+                    a {
+                        svg {
+                            path {
+                                transition: 0.5s;
+                            }
+                        }
+                        
+                        &:hover {
+                            svg {
+                                path {
+                                    fill:#377BE1;
+                                }
+                            }
+                        }
+                    }
+                }                
+            }
+
+            .ok-social {
+                @media(max-width: 815px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
