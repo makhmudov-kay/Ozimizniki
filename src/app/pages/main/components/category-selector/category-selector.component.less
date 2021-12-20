@@ -1,0 +1,110 @@
+.category-selector {
+    padding: 65px 0;
+
+    h3 {
+        font-size: 32px;
+        line-height: 37px;
+        font-weight: 500;
+        color: #3E3E3E;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media(max-width: 992px) {
+            padding: 0 15px;
+        }
+
+        @media(max-width: 830px) {
+            justify-content: space-evenly;
+        }
+    }
+
+    &__block {
+        max-width: 255px;
+        height: 255px;
+        width: 100%;
+        position: relative;
+        border: 2px solid #E5E5E5;
+        border-radius: 12px;
+        margin-top: 16px;
+
+        // margin-left: 30px;
+
+        @media(max-width: 992px) {
+            max-width: 200px;
+            height: 200px;
+        }
+
+        span {
+            color: #3E3E3E;
+            font-size: 18px;
+            line-height: 22px;
+            position: absolute;
+            bottom: 31px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content !important;
+
+            @media(max-width: 992px) {
+                font-size: 13px;
+                line-height: 15px;
+                bottom: 5px;
+            }
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            g {
+                transition: 0.3s;
+            }
+
+            path {
+                transition: 0.3s;
+            }
+
+            @media(max-width: 992px) {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        &:hover {
+            .category-selector__elipse {
+                opacity: 1;
+            }
+
+            svg {
+                g {
+                    fill: #fff;
+                }
+
+                path {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+
+    &__elipse {
+        background: #377BE1;
+        opacity: 0.15;
+        border-radius: 50%;
+        width: 122px;
+        height: 122px;
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.3s;
+    }
+}

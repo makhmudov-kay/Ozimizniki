@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
     styleUrls:['./orderCard.component.less']
 })
 
-export class NameComponent {}
+export class OrderCardComponent {}

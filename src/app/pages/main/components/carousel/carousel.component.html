@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="carousel" id="car">
+    <nz-carousel nzAutoPlay>
+      <div nz-carousel-content *ngFor="let index of carouselInfo">
+        <div class="carousel__info">
+            <h3 class="carousel__title">{{index.title}}</h3>
+            <div class="carousel__cards">
+                <div class="carousel__cards-item">
+                    <img class="carousel__cards-img" src="{{index.lTop.icon}}" alt="card">
+                    <h5 class="carousel__cards-item__title">{{index.lTop.title}}</h5>
+                    <p class="carousel__cards-item__desc">{{index.lTop.text}}</p>
+                </div>
+                <div class="carousel__cards-item">
+                    <img class="carousel__cards-img" src="{{index.rTop.icon}}" alt="card">
+                    <h5 class="carousel__cards-item__title">{{index.rTop.title}}</h5>
+                    <p class="carousel__cards-item__desc">{{index.rTop.text}}</p>
+                </div>
+                <div class="carousel__cards-item">
+                    <img class="carousel__cards-img" src="{{index.lBot.icon}}" alt="card">
+                    <h5 class="carousel__cards-item__title">{{index.lBot.title}}</h5>
+                    <p class="carousel__cards-item__desc">{{index.lBot.text}}</p>
+                </div>
+                <div class="carousel__cards-item">
+                    <img class="carousel__cards-img" src="{{index.rBot.icon}}" alt="card">
+                    <h5 class="carousel__cards-item__title">{{index.rBot.title}}</h5>
+                    <p class="carousel__cards-item__desc">{{index.rBot.text}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel__img">
+            <img src="{{index.imageUrl}}" alt="bg-image">
+        </div>
+      </div>
+    </nz-carousel>
+  </div>
+</div>

@@ -22,6 +22,13 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { HeaderComponent } from './shared/header/header.component';
 import { BannerComponent } from './pages/main/components/banner/banner.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { MainComponent } from './pages/main/main.component';
+import { CarouselComponent } from './pages/main/components/carousel/carousel.component';
+import { OrderCardsComponent } from './pages/main/components/orderCards/orderCards.component';
+import { OrderCardComponent } from './pages/main/components/orderCards/orderCard/orderCard.component';
+import { PromoComponent } from './pages/main/components/promo/promo.component';
+import {CategorySelectorComponent} from "./pages/main/components/category-selector/category-selector.component";
+import {NzCardModule} from "ng-zorro-antd/card";
 
 registerLocaleData(ru);
 
@@ -30,7 +37,13 @@ registerLocaleData(ru);
     AppComponent,
     HeaderComponent,
     BannerComponent,
-    FooterComponent
+    FooterComponent,
+    MainComponent,
+    CarouselComponent,
+    OrderCardsComponent,
+    OrderCardComponent,
+    PromoComponent,
+    CategorySelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +58,8 @@ registerLocaleData(ru);
     NzInputModule,
     NzButtonModule,
     NzDrawerModule,
-    NzCarouselModule
+    NzCarouselModule,
+    NzCardModule
   ],
   providers: [{ provide: NZ_I18N, useValue: ru_RU }],
   bootstrap: [AppComponent]
