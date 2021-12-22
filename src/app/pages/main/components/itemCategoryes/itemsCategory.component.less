@@ -1,0 +1,36 @@
+.itemsCategory {
+  background: #EBF2FC;
+  padding: 50px 0 47px 0;
+  min-height: 610px;
+
+
+  .cat__menu {
+    margin-bottom: 29px;
+    &-item {
+      padding: 11px;
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: 500;
+      color: #3E3E3E;
+      cursor: pointer;
+    }
+
+    @media(max-width: 600px) {
+      .d-none {
+        display: none;
+      }
+    }
+
+    .more {
+
+    }
+
+    &-item.active {
+      color: #fff;
+      background: #377BE1;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+    }
+  }
+}

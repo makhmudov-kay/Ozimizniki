@@ -1,0 +1,38 @@
+<div class="itemsCategory">
+  <div class="container">
+    <div class="itemsCategory__nav cat">
+      <ul class="cat__menu" nz-row>
+        <li class="cat__menu-item active">Уруғлар</li>
+        <li class="cat__menu-item">Ўғитлар</li>
+        <li class="cat__menu-item">Ўсимликларни ҳимоя қилиш маҳсулотлари</li>
+        <li class="cat__menu-item">Техника</li>
+        <li class="cat__menu-item d-none">Ҳайвонлар</li>
+        <li class="cat__menu-item d-none">Ҳайвонлар</li>
+        <li class="cat__menu-item d-none">Ҳайвонлар</li>
+        <li class="cat__menu-item d-none">Ҳайвонлар</li>
+        <li class="cat__menu-item more"><a nz-dropdown [nzDropdownMenu]="menu">
+          Барча категориялар
+          <i nz-icon nzType="down"></i>
+        </a></li>
+      </ul>
+    </div>
+    <nz-card class="itemsCategory__items">
+        <app-item-card></app-item-card>
+        <app-item-card></app-item-card>
+        <app-item-card></app-item-card>
+        <app-item-card></app-item-card>
+        <app-item-card></app-item-card>
+    </nz-card>
+  </div>
+</div>
+
+
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu nzSelectable>
+    <li nz-menu-item>1st menu item</li>
+    <li nz-menu-item>2nd menu item</li>
+    <li nz-menu-item>3rd menu item</li>
+    <li nz-menu-item nzDanger>4th danger item</li>
+  </ul>
+</nz-dropdown-menu>

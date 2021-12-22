@@ -29,6 +29,20 @@ import { OrderCardComponent } from './pages/main/components/orderCards/orderCard
 import { PromoComponent } from './pages/main/components/promo/promo.component';
 import {CategorySelectorComponent} from "./pages/main/components/category-selector/category-selector.component";
 import {NzCardModule} from "ng-zorro-antd/card";
+import {ItemCardComponent} from "./pages/main/components/itemCard/itemCard.component";
+import {ItemsCategoryComponent} from "./pages/main/components/itemCategoryes/itemsCategory.component";
+import {AboutProjectComponent} from "./pages/about-project/about-project.component";
+import {AppRoutingModule} from "./app-routing.module";
+import {AboutBannerComponent} from "./pages/about-project/components/aboutBanner/aboutBanner.component";
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { OurMissionComponent } from './pages/about-project/components/our-mission/our-mission.component';
+import { OurTargetComponent } from './pages/about-project/components/our-target/our-target.component';
+import { AboutServiceComponent } from './pages/about-project/components/about-service/about-service.component';
+import { ProviderComponent } from './pages/about-project/components/provider/provider.component';
+import { NewsComponent } from './pages/news/news.component';
+import { NewsCardComponent } from './pages/news/components/news-card/news-card.component';
+import { QuestionsComponent } from './pages/questions/questions.component';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 registerLocaleData(ru);
 
@@ -43,7 +57,18 @@ registerLocaleData(ru);
     OrderCardsComponent,
     OrderCardComponent,
     PromoComponent,
-    CategorySelectorComponent
+    CategorySelectorComponent,
+    ItemCardComponent,
+    ItemsCategoryComponent,
+    AboutProjectComponent,
+    AboutBannerComponent,
+    OurMissionComponent,
+    OurTargetComponent,
+    AboutServiceComponent,
+    ProviderComponent,
+    NewsComponent,
+    NewsCardComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +84,10 @@ registerLocaleData(ru);
     NzButtonModule,
     NzDrawerModule,
     NzCarouselModule,
-    NzCardModule
+    NzCardModule,
+    AppRoutingModule,
+    NzBreadCrumbModule,
+    NzCollapseModule
   ],
   providers: [{ provide: NZ_I18N, useValue: ru_RU }],
   bootstrap: [AppComponent]

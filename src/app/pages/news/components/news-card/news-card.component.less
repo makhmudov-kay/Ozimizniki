@@ -1,0 +1,72 @@
+.newsCard {
+  padding: 23px 0 205px 0;
+
+  @media(max-width: 576px) {
+    padding-bottom: 100px;
+  }
+  &__title {
+    font-size: 32px;
+    line-height: 38px;
+    color: #152536;
+    font-weight: 700;
+    margin-bottom: 52px;
+    @media(max-width: 576px) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__desc {
+    font-size: 16px;
+    line-height: 24px;
+    color: #393939;
+    font-family: Ubuntu, sans-serif;
+    font-weight: 400;
+    margin: 0;
+
+    @media(max-width: 576px) {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 36px;
+    &-date {
+      font-size: 14px;
+      line-height: 22px;
+      color: #999999;
+      margin-right: 49px;
+    }
+
+    &-view {
+      color: #999999;
+      font-size: 14px;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &__shareLink {
+    a {
+      font-size: 18px;
+      line-height: 22px;
+      color: #000000;
+      &:hover {
+        color: #377BE1;
+      }
+
+      i {
+        font-size: 28px;
+        color: #377BE1;
+        margin-right: 15px;
+        vertical-align: bottom;
+      }
+    }
+
+
+  }
+}
