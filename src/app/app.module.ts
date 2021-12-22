@@ -6,7 +6,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { ru_RU } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import ru from '@angular/common/locales/ru';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
@@ -43,6 +43,11 @@ import { NewsComponent } from './pages/news/news.component';
 import { NewsCardComponent } from './pages/news/components/news-card/news-card.component';
 import { QuestionsComponent } from './pages/questions/questions.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { CartComponent } from './pages/cart/cart.component';
+import { CartItemComponent } from './shared/cart-item/cart-item.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 registerLocaleData(ru);
 
@@ -68,7 +73,10 @@ registerLocaleData(ru);
     ProviderComponent,
     NewsComponent,
     NewsCardComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    ContactUsComponent,
+    CartComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +95,10 @@ registerLocaleData(ru);
     NzCardModule,
     AppRoutingModule,
     NzBreadCrumbModule,
-    NzCollapseModule
+    NzCollapseModule,
+    NzFormModule,
+    ReactiveFormsModule,
+    NzTagModule
   ],
   providers: [{ provide: NZ_I18N, useValue: ru_RU }],
   bootstrap: [AppComponent]

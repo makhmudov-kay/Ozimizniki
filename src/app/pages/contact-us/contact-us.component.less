@@ -1,0 +1,103 @@
+.contact-us {
+  padding-bottom: 191px;
+
+  &__info {
+    background: #804F98;
+  }
+
+  &__block {
+    margin-top: 82px;
+    -webkit-border-radius: 19px;
+    -moz-border-radius: 19px;
+    border-radius: 19px;
+    box-shadow: 0px 51px 48px rgba(0, 0, 0, 0.06);
+    border: 1px solid #F0F0F0;
+  }
+
+  &__form-title {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 500;
+    color: #3E3E3E;
+
+    text-align: center;
+  }
+
+  form {
+    padding: 34px;
+    text-align: center;
+
+    @media(max-width: 575px) {
+      nz-form-label {
+        display: none;
+      }
+    }
+
+    input {
+      padding: 14px 15px;
+      font-size: 14px;
+      line-height: 16px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+    }
+
+    textarea {
+      padding: 13px 14px;
+      font-size: 14px;
+      line-height: 16px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 18px;
+    color: #3E3E3E;
+    text-align: center;
+    margin-bottom: 32px;
+
+    &.modify {
+      color: #ffffff;
+    }
+  }
+
+  &__info {
+    padding: 34px 0 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 19px 19px 0;
+
+    @media(max-width: 768px) {
+      border-radius: 0 0 19px 19px;
+    }
+  }
+
+  &__social {
+    margin-top: 13px;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-bottom: 17px;
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 16px;
+        color: #ffffff;
+      }
+    }
+  }
+
+  &__icons {
+    margin-top: auto;
+
+    a {
+      margin-right: 8px;
+    }
+  }
+}

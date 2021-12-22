@@ -1,7 +1,6 @@
 // Custom Theming for NG-ZORRO
 // For more information: https://ng.ant.design/docs/customize-theme/en
 @import "../node_modules/ng-zorro-antd/ng-zorro-antd.less";
-
 // Override less variables to here
 // View all variables: https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/themes/default.less
 @import url("./theme.less");
@@ -10,55 +9,55 @@
 
 /* You can add global styles to this file, and also import other style files */
 body {
-    font-family: @myFont;
-    font-weight: 400;
+  font-family: @myFont;
+  font-weight: 400;
 }
 
 nz-layout {
-    background: @white;
+  background: @white;
 }
 
 .container {
-    max-width: 1140px;
-    width: 100%;
-    padding: 0 15px;
-    margin: auto;
+  max-width: 1140px;
+  width: 100%;
+  padding: 0 15px;
+  margin: auto;
 }
 
 ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 #car {
 
-    button {
-        padding: 3px;
-        border-radius: 15px;
-        background: #377BE1 !important;
-        opacity: 0.5;
-    }
+  button {
+    padding: 3px;
+    border-radius: 15px;
+    background: #377BE1 !important;
+    opacity: 0.5;
+  }
 
-    .slick-active {
-        button {
-            opacity: 1;
-        }
+  .slick-active {
+    button {
+      opacity: 1;
     }
+  }
 }
 
 .itemsCategory__items {
-    background: none !important;
+  background: none !important;
 
   .ant-card-body {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    @media(max-width: 1140px) {
+    @media (max-width: 1140px) {
       justify-content: center;
     }
   }
@@ -76,7 +75,7 @@ li {
   color: #3E3E3E;
   text-align: center;
 
-  @media(max-width: 576px) {
+  @media (max-width: 576px) {
     font-size: 24px;
     line-height: 28px;
     font-weight: 500;
@@ -99,7 +98,7 @@ li {
   line-height: 24px;
   font-weight: 500;
 
-  @media(max-width: 576px) {
+  @media (max-width: 576px) {
     font-size: 16px;
     line-height: 20px;
   }

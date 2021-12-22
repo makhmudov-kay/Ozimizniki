@@ -8,7 +8,7 @@
       <nz-breadcrumb-item>"Унутилмас саёҳатни ютиб олинг"</nz-breadcrumb-item>
     </nz-breadcrumb>
     <nz-collapse nzAccordion>
-      <nz-collapse-panel #collapseId *ngFor="let panel of panels" [nzHeader]="panel.title" [nzActive]="panel.active">
+      <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.title" [nzActive]="panel.active">
         <p class="ask">{{ panel.name }}</p>
       </nz-collapse-panel>
     </nz-collapse>

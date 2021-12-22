@@ -100,8 +100,8 @@
                         </button>
                     </div>
                     <div class="navbar__bottom-shoping">
-                        <!-- <i nz-icon nzType="heart" nzTheme="outline"></i> -->
-                        <a href="#" class="navbar__bottom-shoping_cart"><i nz-icon nzType="shopping-cart" nzTheme="outline"></i></a>
+                        <!-- <i nz-icon nzType="heart" nzTheme="outline"></i>  [routerLink]="['/favorites']"-->
+                        <a [routerLink]="['/cart']" class="navbar__bottom-shoping_cart"><i nz-icon nzType="shopping-cart" nzTheme="outline"></i></a>
                     </div>
                     <div class="header__bottom-login">
                         <button class="login-btn" nz-button nzType="primary">
