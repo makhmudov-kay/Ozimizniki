@@ -1,0 +1,37 @@
+<button class="login-btn" nz-button nzType="default" nzShape="round" nz-dropdown [nzDropdownMenu]="menu">
+  <i nz-icon nzType="solution" nzTheme="outline"></i>
+  <span>Кабинет</span>
+  <nz-badge class="dot" [nzDot]="dot">
+  </nz-badge>
+
+</button>
+
+
+<!--DROPDOWN-->
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu>
+    <li nz-menu-item>
+      <a [routerLink]="['/profile']">Профиль</a>
+    </li>
+    <li nz-menu-item>
+      <a>Махсулотлар</a>
+    </li>
+    <li nz-menu-item>
+      <a class="modified-badge"><span>Витрина</span> <nz-badge nzStandalone [nzCount]="4"></nz-badge></a>
+    </li>
+    <li nz-menu-item>
+      <a class="modified-badge"><span>Хабарлар</span> <nz-badge nzStandalone [nzCount]="1"></nz-badge></a>
+    </li>
+    <li nz-menu-item>
+      <a class="modified-badge"><span>Онлайн консултант</span> <nz-badge nzStandalone [nzCount]="1"></nz-badge></a>
+    </li>
+    <li><nz-divider class="divider"></nz-divider></li>
+    <li nz-menu-item>
+      <a ><i nz-icon nzType="logout" class="logout-icon" nzTheme="outline"></i>Чиқиш</a>
+    </li>
+  </ul>
+</nz-dropdown-menu>
+
+
+<!--SWITCHER BADGE DOT-->
+<!--<nz-switch [(ngModel)]="dot"></nz-switch>-->

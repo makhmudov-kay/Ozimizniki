@@ -1,0 +1,147 @@
+.myCard {
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+
+  .ant-card-body {
+    padding: 13px 15px;
+  }
+}
+
+.item {
+  .cardItem {
+    object-fit: cover;
+    height: 176px;
+    max-width: 164px;
+    width: 100%;
+  }
+
+  .imgBlock {
+    text-align: center;
+  }
+
+  .descBlock {
+    @media(max-width: 576px) {
+      text-align: center;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-title {
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 500;
+      color: #3E3E3E;
+      margin: 0;
+
+      @media(max-width: 768px) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    &-subtitle {
+      font-size: 14px;
+      line-height: 18px;
+      color: #aaaaaa;
+
+      @media(max-width: 768px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+
+    &-text {
+      font-size: 14px;
+      line-height: 18px;
+      color: #3E3E3E;
+      max-width: 440px;
+      width: 100%;
+      margin: 17px 0 27px 0;
+
+      @media(max-width: 768px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+
+
+
+  &__calc {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media(max-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    @media(max-width: 380px) {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    &-price {
+      font-size: 20px;
+      line-height: 22px;
+      font-weight: 500;
+      color: #3E3E3E;
+      margin-bottom: 14px;
+
+      @media(max-width: 576px) {
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+
+    &-counter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 184px;
+
+      button {
+        display: block;
+      }
+
+      span {
+        flex-grow: 1;
+        display: block;
+        padding: 0 5px;
+        font-size: 16px;
+        line-height: 18px;
+        color: #3E3E3E;
+        @media(max-width: 576px) {
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+    }
+
+    &-contacts {
+      margin: 14px 0;
+      .middle-icon {
+        margin: 0 10px;
+      }
+      @media(max-width: 768px) {
+        margin-top: 0;
+      }
+
+      @media(max-width: 381px) {
+        margin-top: 14px;
+      }
+
+    }
+  }
+}

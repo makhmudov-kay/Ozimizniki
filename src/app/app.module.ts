@@ -46,8 +46,23 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { CartComponent } from './pages/cart/cart.component';
-import { CartItemComponent } from './shared/cart-item/cart-item.component';
+import { FavoriteItemComponent } from './pages/favorites/components/favorite-item/favorite-item.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { EmptyComponent } from './pages/favorites/components/favoriteEmpty/empty.component';
+import { LoginComponent } from './shared/header/components/login/login.component';
+import { CabinetComponent } from './shared/header/components/cabinet/cabinet.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SidebarComponent } from './pages/profile/components/sidebar/sidebar.component';
+import { ProfileInfoComponent } from './pages/profile/components/profile-info/profile-info.component';
+// import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
 
 registerLocaleData(ru);
 
@@ -76,7 +91,14 @@ registerLocaleData(ru);
     QuestionsComponent,
     ContactUsComponent,
     CartComponent,
-    CartItemComponent
+    FavoriteItemComponent,
+    FavoritesComponent,
+    EmptyComponent,
+    LoginComponent,
+    CabinetComponent,
+    ProfileComponent,
+    SidebarComponent,
+    ProfileInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,7 +120,14 @@ registerLocaleData(ru);
     NzCollapseModule,
     NzFormModule,
     ReactiveFormsModule,
-    NzTagModule
+    NzTagModule,
+    NzEmptyModule,
+    NzDividerModule,
+    NzBadgeModule,
+    NzTabsModule,
+    NzAvatarModule,
+    NzDescriptionsModule,
+    NzSpaceModule
   ],
   providers: [{ provide: NZ_I18N, useValue: ru_RU }],
   bootstrap: [AppComponent]

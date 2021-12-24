@@ -1,0 +1,18 @@
+<div class="container">
+  <nz-breadcrumb class="breadCrumb">
+    <nz-breadcrumb-item class="breadcrumb__text">
+      <a [routerLink]="['/']">Асосий саҳифа</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item class="breadcrumb__text">Кабинет</nz-breadcrumb-item>
+  </nz-breadcrumb>
+  <div class="profile-layout" style="background:#ffffff;" nz-row [nzGutter]="[46, 10]" >
+    <app-sidebar nz-col nzSm="24" nzLg="6"></app-sidebar>
+    <app-profile-info nz-col nzSm="24" nzLg="18"></app-profile-info>
+    <!--<div nz style="background: #ffffff; max-width: 190px; width: 100%">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div style="background: #ffffff; padding-left: 45px">
+      <app-profile-info></app-profile-info>
+    </div>-->
+  </div>
+</div>

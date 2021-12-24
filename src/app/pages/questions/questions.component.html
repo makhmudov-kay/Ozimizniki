@@ -1,11 +1,11 @@
 <div class="container">
   <div class="question">
     <nz-breadcrumb class="breadCrumb">
-      <nz-breadcrumb-item><a>Асосий саҳифа</a></nz-breadcrumb-item>
-      <nz-breadcrumb-item>
+      <nz-breadcrumb-item class="breadcrumb__text"><a>Асосий саҳифа</a></nz-breadcrumb-item>
+      <nz-breadcrumb-item class="breadcrumb__text">
         <a>Янгиликлар</a>
       </nz-breadcrumb-item>
-      <nz-breadcrumb-item>"Унутилмас саёҳатни ютиб олинг"</nz-breadcrumb-item>
+      <nz-breadcrumb-item class="breadcrumb__text">"Унутилмас саёҳатни ютиб олинг"</nz-breadcrumb-item>
     </nz-breadcrumb>
     <nz-collapse nzAccordion>
       <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.title" [nzActive]="panel.active">

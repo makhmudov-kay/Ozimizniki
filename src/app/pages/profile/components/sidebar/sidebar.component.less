@@ -1,0 +1,52 @@
+.profileSidebar {
+  width: 100%;
+
+  @media(max-width: 600px) {
+    display: none;
+  }
+
+  &__menu {
+    padding: 8px 6px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 1px solid #E6E6E6;
+
+    @media(max-width: 991px) {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-list {
+      font-size: 14px;
+      line-height: 18px;
+      color: #3E3E3E;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      padding: 7px 10px;
+      transition: 0.1s ease-in-out;
+       a {
+         display: flex;
+         justify-content: space-between;
+         width: 100%;
+         span {
+           flex-grow: 1;
+         }
+       }
+    }
+  }
+
+  .ant-menu-item-selected {
+    background: #377BE1;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+  }
+
+  .ant-menu-item-selected {
+    a {
+      color: #ffffff;
+    }
+  }
+}

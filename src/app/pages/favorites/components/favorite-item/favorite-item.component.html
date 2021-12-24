@@ -1,0 +1,39 @@
+<nz-card class="myCard" *ngFor="let item of itemInfo">
+  <div class="item" nz-row [nzGutter]="[18, 10]" nzJustify="center">
+    <div class="imgBlock" nz-col nzXs="24" nzSm="8" nzMd="6" nzLg="5" nzXl="4">
+      <img src="{{item.itemImg}}" height="164"
+           alt="cardItem" class="item__img">
+    </div>
+    <div nz-col nzXs="24" nzSm="16" nzMd="11" nzLg="13" nzXl="15" class="item__desc">
+      <div class="descBlock">
+        <h3 class="item__desc-title">{{item.itemTitle}}</h3>
+        <span class="item__desc-subtitle">{{item.itemSubtitle}}</span>
+      </div>
+      <p class="item__desc-text">{{item.itemDescription}}</p>
+      <div class="item__tags">
+        <nz-tag [nzColor]="'cyan'" *ngFor="let tag of item.tags">{{tag}}</nz-tag>
+      </div>
+    </div>
+    <div nz-col nzXs="24" nzSm="24" nzMd="7" nzLg="6" nzXl="5" class="item__calc">
+      <div>
+        <h4 class="item__calc-price">{{item.price}} сум</h4>
+        <div class="item__calc-counter">
+          <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="minus" nzTheme="outline"></i></button>
+          <span>{{item.count}} Кг</span>
+          <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
+        </div>
+      </div>
+      <div>
+        <div class="item__calc-contacts">
+          <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="message" nzTheme="outline"></i>
+          </button>
+          <button [ngStyle]="{color: item.favorites && '#40a9ff', borderColor: item.favorites && '#40a9ff'}"
+                  class="middle-icon" nz-button nzType="default" nzShape="circle"><i nz-icon nzType="heart"
+                                                                                     nzTheme="fill"></i></button>
+          <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="phone" nzTheme="outline"></i></button>
+        </div>
+        <button nz-button nzType="primary" nzShape="round">Саватчага қўшиш</button>
+      </div>
+    </div>
+  </div>
+</nz-card>

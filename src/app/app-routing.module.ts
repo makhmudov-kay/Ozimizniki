@@ -6,6 +6,8 @@ import {NewsComponent} from "./pages/news/news.component";
 import {QuestionsComponent} from "./pages/questions/questions.component";
 import {ContactUsComponent} from "./pages/contact-us/contact-us.component";
 import {CartComponent} from "./pages/cart/cart.component";
+import {FavoritesComponent} from "./pages/favorites/favorites.component";
+import {ProfileComponent} from "./pages/profile/profile.component";
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -13,8 +15,40 @@ const routes: Routes = [
   {path: 'news', component: NewsComponent},
   {path: 'questions', component: QuestionsComponent},
   {path: 'contactus', component: ContactUsComponent},
-  {path: 'cart', component: CartComponent}
+  {path: 'favorites', component: FavoritesComponent},
+  {path: 'cart', component: CartComponent},
+  {path: 'profile', component: ProfileComponent},
 ]
+
+/*const routes: Routes = [
+  { path: '', pathMatch: 'full', component: MockComponentComponent, data: { bc: 'Looking outside' } },
+  {
+    path: 'home', component: MockComponentComponent,
+    data: { bc: 'I see a home' },
+    children: [
+      {
+        path: 'primaryHouse', component: MockComponentComponent,
+        data: { bc: 'I\'m going inside the home' },
+        children: [
+          {
+            path: 'kitchen', component: MockComponentComponent,
+            data: { bc: 'look inside the kitchen' }
+          },
+          {
+            path: 'bedroom', component: MockComponentComponent,
+            data: { bc: 'look inside the bedroom' }
+          }
+        ]
+      },
+      {
+        path: 'guestHouse', component: MockComponentComponent,
+        data: { bc: 'I\'m going in the back yard' }
+      }
+    ]
+  }
+];*/
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
