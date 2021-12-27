@@ -63,6 +63,12 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { LegalEntityComponent } from './pages/profile/components/profile-info/components/profile-legal-entity/legal-entity.component';
+import { ProfilePersonComponent } from './pages/profile/components/profile-info/components/profile-person/profile-person.component';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import {NzMessageModule} from "ng-zorro-antd/message";
+import { FilledLegalEntityComponent } from './pages/profile/components/profile-info/components/filled-legal-entity/filled-legal-entity.component';
 
 registerLocaleData(ru);
 
@@ -99,6 +105,9 @@ registerLocaleData(ru);
     ProfileComponent,
     SidebarComponent,
     ProfileInfoComponent,
+    LegalEntityComponent,
+    ProfilePersonComponent,
+    FilledLegalEntityComponent
   ],
   imports: [
     BrowserModule,
@@ -127,7 +136,10 @@ registerLocaleData(ru);
     NzTabsModule,
     NzAvatarModule,
     NzDescriptionsModule,
-    NzSpaceModule
+    NzSpaceModule,
+    NzModalModule,
+    NzUploadModule,
+    NzMessageModule
   ],
   providers: [{ provide: NZ_I18N, useValue: ru_RU }],
   bootstrap: [AppComponent]

@@ -1,0 +1,178 @@
+<div class="person">
+  <div class="person__individual" nz-row [nzGutter]="[15,15]">
+    <div nz-col nzLg="5" class="person__avatar">
+      <nz-avatar nzText="ШД" class="ava-img"></nz-avatar>
+    </div>
+    <div nz-col nzLg="19" class="person__data">
+      <h3 class="person__data-summary">Шахсий маълумотлар</h3>
+      <h1 class="person__data-title">Шокиров Дилмурод</h1>
+      <div class="person__data-table" nz-row [nzGutter]="[15, 0]">
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="person__data-table_block">
+          <h6 class="person__data-table_block-header">Туғилган сана</h6>
+          <p>3.04.1991</p>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="person__data-table_block">
+          <h6 class="person__data-table_block-header">Жинси</h6>
+          <p>Еркак</p>
+        </div>
+      </div>
+      <div class="person__data-table" nz-row [nzGutter]="[15, 0]">
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="person__data-table_block">
+          <h6 class="person__data-table_block-header">E-mail</h6>
+          <p class="email">shokirovdilmorodabdusattorovich1966@gmail.com</p>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="person__data-table_block">
+          <h6 class="person__data-table_block-header">Телефон</h6>
+          <p>+998 97 405 05 50</p>
+        </div>
+      </div>
+      <nz-space class="person__btns" nz-row>
+        <button nz-button nzType="primary" nzShape="round" *nzSpaceItem (click)="showModalForPerson()">
+          <span>Маълумотларни ўзгартириш</span>
+        </button>
+        <button nz-button nzType="primary" nzShape="round" *nzSpaceItem (click)="showModalForPass()">
+          <span>Паролни ўзгартириш</span>
+        </button>
+      </nz-space>
+
+    </div>
+  </div>
+</div>
+
+
+<!--CHANGE PASSWORD MODAL WINDOW-->
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzTitle="Паролни ўзгартириш"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+  [nzOkLoading]="isOkLoading"
+>
+  <!--  <p *nzModalContent>Modal Content</p>-->
+  <div class="changePass" *nzModalContent>
+    <div class="old-pass">
+      <label for="oldPass">Ески парол</label>
+      <nz-input-group [nzSuffix]="suffixTemplate1">
+        <input
+          [type]="oldPassVisible ? 'text' : 'password'"
+          nz-input
+          placeholder="Ески парол"
+          [(ngModel)]="oldPassword"
+          id="oldPass"
+        />
+      </nz-input-group>
+      <ng-template #suffixTemplate1>
+        <i nz-icon [nzType]="oldPassVisible ? 'eye-invisible' : 'eye'"
+           (click)="oldPassVisible = !oldPassVisible"></i>
+      </ng-template>
+    </div>
+
+    <div class="new-pass">
+      <label for="newPass">Янги парол</label>
+      <nz-input-group [nzSuffix]="suffixTemplate2">
+        <input
+          [type]="newPassVisible ? 'text' : 'password'"
+          nz-input
+          placeholder="Янги парол"
+          [(ngModel)]="newPassword"
+          id="newPass"
+        />
+      </nz-input-group>
+      <ng-template #suffixTemplate2>
+        <i nz-icon [nzType]="newPassVisible ? 'eye-invisible' : 'eye'"
+           (click)="newPassVisible = !newPassVisible"></i>
+      </ng-template>
+    </div>
+
+    <div class="repeat-pass">
+      <label for="rePass">Паролни қайта киритинг</label>
+      <nz-input-group [nzSuffix]="suffixTemplate3">
+        <input
+          [type]="rePassVisible ? 'text' : 'password'"
+          nz-input
+          placeholder="Паролни қайта киритинг"
+          [(ngModel)]="rePassword"
+          id="rePass"
+        />
+      </nz-input-group>
+      <ng-template #suffixTemplate3>
+        <i nz-icon [nzType]="rePassVisible ? 'eye-invisible' : 'eye'"
+           (click)="rePassVisible = !rePassVisible"></i>
+      </ng-template>
+    </div>
+  </div>
+</nz-modal>
+
+
+<!--PERSON INFO CHANGE MODAL WINDOW-->
+<nz-modal
+  [(nzVisible)]="isVisbilePerson"
+  nzTitle="Шахсий маълумотларни ўзгартириш"
+  nzOkText="Сақлаш"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="submitForm()"
+  [nzOkLoading]="isOkLoading"
+>
+  <div class="person-form" *nzModalContent>
+    <form
+      nz-form
+      nzLayout="vertical"
+      [formGroup]="validateForm"
+      (ngSubmit)="submitForm()"
+    >
+      <nz-form-item>
+        <nz-upload
+          class="avatar-uploader"
+          nzAction="../../../../../../../assets/profile"
+          nzName="avatar"
+          nzListType="picture-card"
+          [nzShowUploadList]="false"
+          [nzBeforeUpload]="beforeUpload"
+          (nzChange)="handleChange($event)"
+        >
+          <ng-container *ngIf="!avatarUrl">
+            <i class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'plus'"></i>
+            <div class="ant-upload-text">Upload</div>
+          </ng-container>
+          <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
+        </nz-upload>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Исм</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input nz-input formControlName="name" placeholder="Исм"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Фамилияси</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your last name!">
+          <input nz-input formControlName="surname" placeholder="Фамилияси"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Отасининг исми</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input nz-input formControlName="patronymic" placeholder="Отасининг исми"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Телефон рақами</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your phone number!">
+          <input nz-input formControlName="phone" placeholder="Телефон рақами"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Тугилган сана</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your date of birth!">
+          <input nz-input formControlName="dateOfBirth" placeholder="Тугилган сана"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>E-mail</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your e-mail!">
+          <input nz-input formControlName="email" placeholder="E-mail"/>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</nz-modal>

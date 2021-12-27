@@ -1,41 +1,14 @@
 <div class="profileInfo">
-  <nz-tabset>
+  <nz-tabset class="tabInfo">
     <nz-tab nzTitle="Шахсий малумотлар">
-      <div class="profileInfo__individual" nz-row [nzGutter]="[15,15]">
-        <div nz-col nzLg="5" class="profileInfo__avatar">
-          <nz-avatar nzText="ШД" class="ava-img"></nz-avatar>
-        </div>
-        <div nz-col nzLg="19" class="profileInfo__data">
-          <h3 class="profileInfo__data-summary">Шахсий маълумотлар</h3>
-          <h1 class="profileInfo__data-title">Шокиров Дилмурод</h1>
-          <div class="profileInfo__data-table" nz-row [nzGutter]="[15, 0]">
-            <div nz-col nzXs="24" nzSm="24" nzXl="12" class="profileInfo__data-table_block">
-              <h6 class="profileInfo__data-table_block-header">Туғилган сана</h6>
-              <p>3.04.1991</p>
-            </div>
-            <div nz-col nzXs="24" nzSm="24" nzXl="12" class="profileInfo__data-table_block">
-              <h6 class="profileInfo__data-table_block-header">Жинси</h6>
-              <p>Еркак</p>
-            </div>
-          </div>
-          <div class="profileInfo__data-table" nz-row [nzGutter]="[15, 0]">
-            <div nz-col nzXs="24" nzSm="24" nzXl="12" class="profileInfo__data-table_block">
-              <h6 class="profileInfo__data-table_block-header">E-mail</h6>
-              <p class="email">shokirovdilmorodabdusattorovich1966@gmail.com</p>
-            </div>
-            <div nz-col nzXs="24" nzSm="24" nzXl="12" class="profileInfo__data-table_block">
-              <h6 class="profileInfo__data-table_block-header">Телефон</h6>
-              <p>+998 97 405 05 50</p>
-            </div>
-          </div>
-          <nz-space class="profileInfo__btns" nz-row>
-            <button nz-col nz-button nzType="primary" nzShape="round" *nzSpaceItem>Маълумотларни ўзгартириш</button>
-            <button nz-col nz-button nzType="primary" nzShape="round" *nzSpaceItem>Паролни ўзгартириш</button>
-          </nz-space>
-
-        </div>
-      </div>
+      <app-profile-person></app-profile-person>
     </nz-tab>
-    <nz-tab nzTitle="Юридик малумотлар">Content of Tab Pane 2</nz-tab>
+    <nz-tab nzTitle="Юридик малумотлар">
+<!--      <app-legal-entity></app-legal-entity>-->
+      <app-filled-legal-entity></app-filled-legal-entity>
+    </nz-tab>
   </nz-tabset>
 </div>
+
+
+

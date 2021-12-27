@@ -1,0 +1,80 @@
+<div class="legalEntity" nz-row [nzGutter]="[15,15]">
+  <div nz-col nzLg="5" class="legalEntity__avatar">
+    <nz-avatar nzIcon="plus" [nzSize]="160" class="ava-img"></nz-avatar>
+  </div>
+  <div nz-col nzLg="19" class="legalEntity__data">
+    <h3 class="legalEntity__data-summary">Юридик малумотлар</h3>
+    <p class="legalEntity__data-text">Маълумотлар тўлдирилмаган.
+      Буюртма бериш учун сиз юридик маълумотларни кўрсатишингиз керак.</p>
+    <nz-space class="legalEntity__btns" nz-row>
+      <button nz-button nzType="primary" nzShape="round" *nzSpaceItem (click)="showModal()">
+        <span>Маълумот қўшиш</span>
+      </button>
+    </nz-space>
+  </div>
+</div>
+
+
+<!--ADD LEGAL ENTITY INFO-->
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzTitle="Юридик маълумотларни ўзгартириш"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="submitForm()"
+  nzOkText="Сақлаш"
+  [nzOkLoading]="isOkLoading"
+>
+  <div class="legalEntity-form" *nzModalContent>
+    <form nz-form nzLayout="vertical" [formGroup]="validateForm">
+      <nz-form-item>
+        <nz-form-label>Номи</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input nz-input formControlName="name" placeholder="Номи" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Телефон рақами</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your phone number!">
+          <input nz-input formControlName="phoneNumber" placeholder="+998991234567" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Вилоят</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your region!">
+          <input nz-input formControlName="region" placeholder="Вилоят" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Туман</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your district!">
+          <input nz-input formControlName="district" placeholder="Туман" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Банк МФО си</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your text!">
+          <input nz-input formControlName="bank" placeholder="МФО" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Манзил</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your adres!">
+          <input nz-input formControlName="adres" placeholder="Манзил" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>СТИР</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your id!">
+          <input nz-input formControlName="stir" placeholder="СТИР" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Хисоб рақами</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input nz-input formControlName="xisobRakami" placeholder="Хисоб рақами" />
+        </nz-form-control>
+      </nz-form-item>
+
+    </form>
+  </div>
+</nz-modal>

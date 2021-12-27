@@ -1,0 +1,87 @@
+.filledEntity {
+  &__individual {
+    padding-top: 40px;
+
+    @media (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__btns {
+    margin-top: 41px;
+    @media (max-width: 483px) {
+      justify-content: center;
+    }
+
+    button {
+      font-size: 16px;
+      line-height: 18px;
+      color: #ffffff;
+      @media (max-width: 483px) {
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 360px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__data {
+    @media(max-width: 992px) {
+      text-align: center;
+    }
+
+    &-summary {
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 500;
+      color: #3E3E3E;
+      margin-bottom: 8px;
+      @media (max-width: 360px) {
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+      }
+    }
+
+    &-title {
+      font-size: 32px;
+      line-height: 37px;
+      font-weight: 500;
+      color: #3E3E3E;
+      margin-bottom: 32px;
+
+      @media (max-width: 360px) {
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+      }
+    }
+
+    &-table {
+      &_block {
+        &-header {
+          font-size: 14px;
+          line-height: 18px;
+          color: #7C7E80;
+          font-weight: 400;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 18px;
+          color: #000000;
+        }
+
+        @media (max-width: 370px) {
+          .email {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+}

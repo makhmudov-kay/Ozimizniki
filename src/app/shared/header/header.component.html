@@ -139,13 +139,14 @@
             </button>
           </div>
           <div class="navbar__bottom-shoping">
-            <a class="navbar__bottom-shoping-favorite" [routerLink]="['/favorites']"><i nz-icon nzType="heart" nzTheme="outline"></i></a>
+            <a class="navbar__bottom-shoping-favorite" [routerLink]="['/favorites']"><i nz-icon nzType="heart"
+                                                                                        nzTheme="outline"></i></a>
             <!-- <i nz-icon nzType="heart" nzTheme="outline"></i>  [routerLink]="['/favorites']"-->
             <a [routerLink]="['/cart']" class="navbar__bottom-shoping_cart"><i nz-icon nzType="shopping-cart"
                                                                                nzTheme="outline"></i></a>
           </div>
-<!--          <app-login class="header__bottom-login"></app-login>-->
-              <app-cabinet class="header__bottom-login"></app-cabinet>
+          <!--          <app-login class="header__bottom-login"></app-login>-->
+          <app-cabinet class="header__bottom-login"></app-cabinet>
         </nav>
         <!--  <nav class="navbar__bottom" nz-row [nzGutter]="{ xs: 4, md: 10, lg: 15 }" nzAlign="middle" nzJustify="center">
              <div class="logo" nz-col [nzLg]="{span: 5}" [nzXl]="{span: 4, order: 1}">

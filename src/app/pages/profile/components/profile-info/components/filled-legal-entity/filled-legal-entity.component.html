@@ -1,0 +1,119 @@
+<div class="filledEntity">
+  <div class="filledEntity__individual" nz-row [nzGutter]="[15,15]">
+    <div nz-col nzLg="5" class="filledEntity__avatar">
+      <nz-avatar nzSrc="../../../../../../../assets/profile/logoLagal.svg" class="ava-img"></nz-avatar>
+    </div>
+    <div nz-col nzLg="19" class="filledEntity__data">
+      <h3 class="filledEntity__data-summary">Юридик малумотлар</h3>
+      <h1 class="filledEntity__data-title">МЧЖ "Azia media"</h1>
+      <div class="filledEntity__data-table" nz-row [nzGutter]="[15, 0]">
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="filledEntity__data-table_block">
+          <h6 class="filledEntity__data-table_block-header">Номи</h6>
+          <p>МЧЖ "Azia media"Шокиров</p>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="filledEntity__data-table_block">
+          <h6 class="filledEntity__data-table_block-header">Телефон рақами</h6>
+          <p>+998974050002</p>
+        </div>
+      </div>
+      <div class="filledEntity__data-table" nz-row [nzGutter]="[15, 0]">
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="filledEntity__data-table_block">
+          <h6 class="filledEntity__data-table_block-header">Вилоят</h6>
+          <p class="email">Самарқанд вилояти</p>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="filledEntity__data-table_block">
+          <h6 class="filledEntity__data-table_block-header">Туман</h6>
+          <p>Пастдарғом туман</p>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="filledEntity__data-table_block">
+          <h6 class="filledEntity__data-table_block-header">Банк МФО си</h6>
+          <p>"Агробанк" аксиядорлик-тижорат банки»</p>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="filledEntity__data-table_block">
+          <h6 class="filledEntity__data-table_block-header">Манзил</h6>
+          <p>43 Мукимий Кўчаси, Тошкент, Ўзбекистон, 100096-уй</p>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="filledEntity__data-table_block">
+          <h6 class="filledEntity__data-table_block-header">СТИР</h6>
+          <p>154786022</p>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzXl="12" class="filledEntity__data-table_block">
+          <h6 class="filledEntity__data-table_block-header">Хисоб рақами</h6>
+          <p>2223 1238 4568 1234 9963 </p>
+        </div>
+
+      </div>
+      <nz-space class="filledEntity__btns" nz-row>
+        <button nz-button nzType="primary" nzSize="large" nzShape="round" nzBlock *nzSpaceItem (click)="showModal()">
+          <span>Маълумотларни ўзгартириш</span>
+        </button>
+      </nz-space>
+
+    </div>
+  </div>
+</div>
+
+
+<!--CHANGE LEGAL ENTITY-->
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzTitle="Юридик маълумотларни ўзгартириш"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="submitForm()"
+  nzOkText="ўзгартириш"
+  [nzOkLoading]="isOkLoading"
+>
+  <div class="legalEntity-form" *nzModalContent>
+    <form nz-form nzLayout="vertical" [formGroup]="validateForm">
+      <nz-form-item>
+        <nz-form-label>Номи</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input nz-input formControlName="name" placeholder="Номи" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Телефон рақами</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your phone number!">
+          <input nz-input formControlName="phoneNumber" placeholder="+998991234567" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Вилоят</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your region!">
+          <input nz-input formControlName="region" placeholder="Вилоят" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Туман</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your district!">
+          <input nz-input formControlName="district" placeholder="Туман" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Банк МФО си</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your text!">
+          <input nz-input formControlName="bank" placeholder="МФО" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Манзил</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your adres!">
+          <input nz-input formControlName="adres" placeholder="Манзил" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>СТИР</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your id!">
+          <input nz-input formControlName="stir" placeholder="СТИР" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Хисоб рақами</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <input nz-input formControlName="xisobRakami" placeholder="Хисоб рақами" />
+        </nz-form-control>
+      </nz-form-item>
+
+    </form>
+  </div>
+</nz-modal>
