@@ -7,6 +7,8 @@
   </nz-breadcrumb>
   <div class="profile-layout" style="background:#ffffff;" nz-row [nzGutter]="[46, 10]" >
     <app-sidebar nz-col nzSm="24" nzLg="6"></app-sidebar>
-    <app-profile-info nz-col nzSm="24" nzLg="18"></app-profile-info>
+    <router-outlet></router-outlet>
+<!--    <app-profile-info nz-col nzSm="24" nzLg="18"></app-profile-info>-->
+    <app-my-request nz-col nzSm="24" nzLg="18"></app-my-request>
   </div>
 </div>

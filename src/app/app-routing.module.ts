@@ -8,6 +8,7 @@ import {ContactUsComponent} from "./pages/contact-us/contact-us.component";
 import {CartComponent} from "./pages/cart/cart.component";
 import {FavoritesComponent} from "./pages/favorites/favorites.component";
 import {ProfileComponent} from "./pages/profile/profile.component";
+import {MyRequestComponent} from "./pages/profile/components/my-request/my-request.component";
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -17,7 +18,7 @@ const routes: Routes = [
   {path: 'contactus', component: ContactUsComponent},
   {path: 'favorites', component: FavoritesComponent},
   {path: 'cart', component: CartComponent},
-  {path: 'profile', component: ProfileComponent},
+  {path: 'profile', component: ProfileComponent}
 ]
 
 /*const routes: Routes = [

@@ -1,0 +1,112 @@
+<div class="myRequest">
+  <div class="myRequest__header" nz-row nzJustify="space-between" nzAlign="middle">
+    <h3 class="myRequest__header-title">Менинг сўровларим</h3>
+    <div class="myRequest__header-filter">
+      <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">Барчаси <i nz-icon nzType="down"></i></a>
+    </div>
+  </div>
+  <div class="myRequest__content" *ngFor="let item of cardsRequests">
+    <div class="myRequest__content__card" nz-row [nzGutter]="[5,0]">
+      <img nz-col nzSm="6" nzXs="6" nzMd="3" src="{{item.imageUrl}}" alt="card request">
+      <div nz-col nzSm="18" nzXs="18" nzMd="7" class="myRequest__content__description">
+        <h4 class="myRequest__content__description-title">{{item.title}}</h4>
+        <span (click)="showModal(item.id)" class="myRequest__content__description-id">{{item.requestID}}</span>
+      </div>
+      <div nz-col nzSm="12" nzXs="12" nzMd="5" class="myRequest__content__info">
+        <h4 class="myRequest__content__info-name">{{item.supplierName}}</h4>
+        <span class="myRequest__content__info-supplier">{{item.supplierCompany}}</span>
+      </div>
+      <div nz-col nzSm="12" nzXs="12" nzMd="4" class="myRequest__content__count">
+        <h4 class="myRequest__content__count-price">{{item.price}} сум</h4>
+        <span class="myRequest__content__count-weight">{{item.weight}} Килограмм</span>
+      </div>
+      <div nz-col nzSm="24" nzXs="24" nzMd="5" class="myRequest__content__status">
+        <span
+          [ngClass]="{'failure': item.status.id === 1, 'waiting': item.status.id === 2, 'successfully': item.status.id === 3}">{{item.status.text}}</span>
+      </div>
+
+    </div>
+  </div>
+  <nz-pagination class="myRequest__pagination" [nzPageIndex]="1" [nzTotal]="500" nzHideOnSinglePage></nz-pagination>
+</div>
+
+
+<!--FILTER DROPDOWN-->
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu>
+    <li nz-menu-item>Барчаси</li>
+    <li nz-menu-item>Қабул қилинди</li>
+    <li nz-menu-item>Бекор қилинди</li>
+    <li nz-menu-item>Янги сўров</li>
+  </ul>
+</nz-dropdown-menu>
+
+<!--MODAL-->
+<div *ngFor="let item of temp">
+  <nz-modal [(nzVisible)]="isVisible" nzTitle="{{item && item.requestID}}" (nzOnCancel)="handleCancel()"
+            (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+      <div class="requestInfo">
+        <div class="requestInfo__about" nz-row nzGutter="20" nzAlign="middle">
+          <img nz-col nzSpan="5" src="../../../../../assets/profile/profileInfoImg.jpg" alt="user avatar">
+          <div nz-col nzSpan="14" class="requestInfo__titles">
+            <h4>Шокиров Дилмурод</h4>
+            <span>МЧЖ "Azia media"</span>
+          </div>
+          <nz-space nz-col nzSpan="5" class="request__contacts">
+            <button *nzSpaceItem nz-button nzType="default" nzShape="circle"><i nz-icon nzType="message"
+                                                                                nzTheme="outline"></i></button>
+            <button *nzSpaceItem nz-button nzType="default" nzShape="circle"><i nz-icon nzType="phone"
+                                                                                nzTheme="outline"></i></button>
+          </nz-space>
+        </div>
+        <nz-collapse nzGhost class="colapse-modal">
+          <nz-collapse-panel
+            nzHeader="Реквизиты"
+            nzActive="false"
+          >
+            <div class="legalyInfo">
+              <div class="row-1" nz-row>
+                <div nz-col nzSpan="9">
+                  <span>Вилоят</span>
+                  <h5>Самарқанд вилояти</h5>
+                </div>
+                <div nz-col nzSpan="15">
+                  <span>Банк МФО си</span>
+                  <h5>"Агробанк" аксиядорлик-тижорат банки»</h5>
+                </div>
+              </div>
+              <div class="row-1" nz-row>
+                <div nz-col nzSpan="9">
+                  <span>Туман</span>
+                  <h5>Пастдарғом туман</h5>
+                </div>
+                <div nz-col nzSpan="10">
+                  <span>Хисоб рақами</span>
+                  <h5>2223 1238 4568 1234 9963 </h5>
+                </div>
+                <div nz-col nzSpan="5">
+                  <span>СТИР</span>
+                  <h5>154786022</h5>
+                </div>
+              </div>
+              <div class="row-1">
+                <div>
+                  <span>Манзил</span>
+                  <h5>43 Мукимий Кўчаси, Тошкент, Ўзбекистон, 100096-уй</h5>
+                </div>
+              </div>
+            </div>
+          </nz-collapse-panel>
+        </nz-collapse>
+        <div class="requestInfo__product">
+          <h3 class="requestInfo__product__title">Маҳсулот</h3>
+          <div class="requestInfo__product__item">
+            <img src="../../../../../assets/profile/productImg.jpg" alt="product image">
+
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </nz-modal>
+</div>

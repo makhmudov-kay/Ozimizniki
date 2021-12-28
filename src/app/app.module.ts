@@ -69,6 +69,9 @@ import { ProfilePersonComponent } from './pages/profile/components/profile-info/
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import {NzMessageModule} from "ng-zorro-antd/message";
 import { FilledLegalEntityComponent } from './pages/profile/components/profile-info/components/filled-legal-entity/filled-legal-entity.component';
+import { MyRequestComponent } from './pages/profile/components/my-request/my-request.component';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzImageModule } from 'ng-zorro-antd/image';
 
 registerLocaleData(ru);
 
@@ -107,7 +110,8 @@ registerLocaleData(ru);
     ProfileInfoComponent,
     LegalEntityComponent,
     ProfilePersonComponent,
-    FilledLegalEntityComponent
+    FilledLegalEntityComponent,
+    MyRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -139,7 +143,9 @@ registerLocaleData(ru);
     NzSpaceModule,
     NzModalModule,
     NzUploadModule,
-    NzMessageModule
+    NzMessageModule,
+    NzPaginationModule,
+    NzImageModule
   ],
   providers: [{ provide: NZ_I18N, useValue: ru_RU }],
   bootstrap: [AppComponent]
