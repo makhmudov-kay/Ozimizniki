@@ -72,6 +72,10 @@ import { FilledLegalEntityComponent } from './pages/profile/components/profile-i
 import { MyRequestComponent } from './pages/profile/components/my-request/my-request.component';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzImageModule } from 'ng-zorro-antd/image';
+import { SeedsComponent } from './pages/categories/components/seeds/seeds.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
+import { MyOrdersComponent } from './pages/profile/components/my-orders/my-orders.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 registerLocaleData(ru);
 
@@ -111,7 +115,10 @@ registerLocaleData(ru);
     LegalEntityComponent,
     ProfilePersonComponent,
     FilledLegalEntityComponent,
-    MyRequestComponent
+    MyRequestComponent,
+    SeedsComponent,
+    CategoriesComponent,
+    MyOrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -145,7 +152,8 @@ registerLocaleData(ru);
     NzUploadModule,
     NzMessageModule,
     NzPaginationModule,
-    NzImageModule
+    NzImageModule,
+    FontAwesomeModule
   ],
   providers: [{ provide: NZ_I18N, useValue: ru_RU }],
   bootstrap: [AppComponent]

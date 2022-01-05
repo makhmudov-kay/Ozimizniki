@@ -1,6 +1,6 @@
 <div class="myRequest">
   <div class="myRequest__header" nz-row nzJustify="space-between" nzAlign="middle">
-    <h3 class="myRequest__header-title">Менинг сўровларим</h3>
+    <h3 class="myRequest__header-title">Харидор сўровлари</h3>
     <div class="myRequest__header-filter">
       <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">Барчаси <i nz-icon nzType="down"></i></a>
     </div>
@@ -49,7 +49,7 @@
     <ng-container *nzModalContent>
 
 
-      <div  class="requestInfo">
+      <div class="requestInfo">
 
 
         <div class="requestInfo__about" nz-row nzGutter="20" nzAlign="middle">
@@ -134,8 +134,12 @@
       </div>
     </ng-container>
     <div *nzModalFooter nz-row nzJustify="space-around">
-      <button nz-col nzSpan="11" nz-button nzBlock nzSize="default" nzShape="round" nzType="default" (click)="handleCancel()">Бекор қилиш</button>
-      <button nz-col nzSpan="11" nz-button nzBlock nzSize="default" nzShape="round" nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading">Қабул қилиш</button>
+      <button nz-col nzSpan="11" nz-button nzBlock nzSize="default" nzShape="round" nzType="default"
+              (click)="handleCancel()">Бекор қилиш
+      </button>
+      <button nz-col nzSpan="11" nz-button nzBlock nzSize="default" nzShape="round" nzType="primary"
+              (click)="handleOk()" [nzLoading]="isConfirmLoading">Қабул қилиш
+      </button>
     </div>
   </nz-modal>
 </div>

@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-my-request',
-  templateUrl: './my-request.component.html',
-  styleUrls: ['./my-request.component.less']
+  selector: 'app-my-orders',
+  templateUrl: './my-orders.component.html',
+  styleUrls: ['./my-orders.component.less']
 })
-export class MyRequestComponent implements OnInit {
+export class MyOrdersComponent implements OnInit {
   cardsRequests = [
     {
       id: 0,
