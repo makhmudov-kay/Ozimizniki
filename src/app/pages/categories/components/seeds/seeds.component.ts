@@ -6,7 +6,6 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./seeds.component.less']
 })
 export class SeedsComponent implements OnInit {
-  array = [1, 2, 3, 4];
   carouselArray = [
     {
       banner: "../../../../../assets/categories/banner1.jpg",
@@ -32,6 +31,7 @@ export class SeedsComponent implements OnInit {
   ]
   cards = [
     {
+      id: 1,
       imageUrl: "../../../../../assets/categories/1.jpg",
       title: "Қизил Юсуф памидори",
       supplier: "МЧЖ \"Green technology\"",
@@ -41,6 +41,7 @@ export class SeedsComponent implements OnInit {
       tags: ["Томат","Бодринг","Сабзи","Карам","Карам"]
     },
     {
+      id: 2,
       imageUrl: "../../../../../assets/categories/2.jpg",
       title: "Қизил Юсуф памидори",
       supplier: "МЧЖ \"Green technology\"",
@@ -50,6 +51,7 @@ export class SeedsComponent implements OnInit {
       tags: ["Томат","Бодринг","Сабзи","Карам","Карам"]
     },
     {
+      id: 3,
       imageUrl: "../../../../../assets/categories/3.jpg",
       title: "Қизил Юсуф памидори",
       supplier: "МЧЖ \"Green technology\"",
@@ -59,6 +61,7 @@ export class SeedsComponent implements OnInit {
       tags: ["Томат","Бодринг","Сабзи","Карам","Карам"]
     },
     {
+      id: 4,
       imageUrl: "../../../../../assets/categories/4.jpg",
       title: "Қизил Юсуф памидори",
       supplier: "МЧЖ \"Green technology\"",
@@ -68,6 +71,7 @@ export class SeedsComponent implements OnInit {
       tags: ["Томат","Бодринг","Сабзи","Карам","Карам"]
     },
     {
+      id: 5,
       imageUrl: "../../../../../assets/categories/5.jpg",
       title: "Қизил Юсуф памидори",
       supplier: "МЧЖ \"Green technology\"",
@@ -77,6 +81,7 @@ export class SeedsComponent implements OnInit {
       tags: ["Томат","Бодринг","Сабзи","Карам","Карам"]
     },
     {
+      id: 6,
       imageUrl: "../../../../../assets/categories/6.jpg",
       title: "Қизил Юсуф памидори",
       supplier: "МЧЖ \"Green technology\"",
@@ -86,6 +91,7 @@ export class SeedsComponent implements OnInit {
       tags: ["Томат","Бодринг","Сабзи","Карам","Карам"]
     },
     {
+      id: 7,
       imageUrl: "../../../../../assets/categories/1.jpg",
       title: "Қизил Юсуф памидори",
       supplier: "МЧЖ \"Green technology\"",
@@ -94,7 +100,6 @@ export class SeedsComponent implements OnInit {
       weight: 100000,
       tags: ["Томат","Бодринг","Сабзи","Карам","Карам"]
     },
-
   ]
 
   constructor() {

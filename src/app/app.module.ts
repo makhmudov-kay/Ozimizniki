@@ -76,6 +76,7 @@ import { SeedsComponent } from './pages/categories/components/seeds/seeds.compon
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { MyOrdersComponent } from './pages/profile/components/my-orders/my-orders.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CategoryItemComponent } from './pages/categories/components/category-item/category-item.component';
 
 registerLocaleData(ru);
 
@@ -118,7 +119,8 @@ registerLocaleData(ru);
     MyRequestComponent,
     SeedsComponent,
     CategoriesComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    CategoryItemComponent
   ],
   imports: [
     BrowserModule,

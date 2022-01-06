@@ -9,6 +9,8 @@ import {CartComponent} from "./pages/cart/cart.component";
 import {FavoritesComponent} from "./pages/favorites/favorites.component";
 import {ProfileComponent} from "./pages/profile/profile.component";
 import {SeedsComponent} from "./pages/categories/components/seeds/seeds.component";
+import {CategoriesComponent} from "./pages/categories/categories.component";
+import {CategoryItemComponent} from "./pages/categories/components/category-item/category-item.component";
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -19,7 +21,16 @@ const routes: Routes = [
   {path: 'favorites', component: FavoritesComponent},
   {path: 'cart', component: CartComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'seeds', component: SeedsComponent}
+  {path: 'categories', component: CategoriesComponent, children: [
+      {
+        path: 'seeds', component: SeedsComponent, children: [
+          {
+            path: 'item', component: CategoryItemComponent
+          }
+        ]
+      }
+    ]},
+  {path: 'itemId', component: CategoryItemComponent}
 ]
 
 /*const routes: Routes = [
