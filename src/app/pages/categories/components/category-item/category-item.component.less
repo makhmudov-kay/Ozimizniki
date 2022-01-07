@@ -29,11 +29,31 @@
 
   &__main {
     &-filter {
-      border: 1px solid #000000;
+      .filter {
+        &__items {
+          border-right: none;
+
+          &-list {
+            margin: 0;
+            padding: 0 10px;
+            font-size: 14px;
+            line-height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+        }
+        &__title {
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 18px;
+          color: #3E3E3E;
+          padding: 0;
+        }
+      }
     }
 
     &-items {
-      border: 1px solid #000000;
     }
   }
 }

@@ -77,6 +77,9 @@ import { CategoriesComponent } from './pages/categories/categories.component';
 import { MyOrdersComponent } from './pages/profile/components/my-orders/my-orders.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CategoryItemComponent } from './pages/categories/components/category-item/category-item.component';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 
 registerLocaleData(ru);
 
@@ -155,7 +158,10 @@ registerLocaleData(ru);
     NzMessageModule,
     NzPaginationModule,
     NzImageModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NzSliderModule,
+    NzCheckboxModule,
+    NzInputNumberModule
   ],
   providers: [{ provide: NZ_I18N, useValue: ru_RU }],
   bootstrap: [AppComponent]
