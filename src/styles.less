@@ -215,13 +215,22 @@ nz-tag {
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
+    padding: 0!important;
     @media(max-width: 576px) {
       margin: auto;
     }
   }
-
+  &__tags {
+    @media(max-width: 500px) {
+      display: none;
+    }
+  }
   &__info {
-    padding: 0 18px;
+    padding: 0 18px!important;
+
+    @media(max-width: 576px) {
+      text-align: center;
+    }
 
     &-title {
       font-weight: 500;
@@ -255,15 +264,20 @@ nz-tag {
         font-size: 12px;
         line-height: 16px;
       }
+      @media(max-width: 500px) {
+        display: none;
+      }
     }
   }
 
   &__calculates {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-left: 15px;
+    align-items: center !important;
+    justify-content: center !important;
+    //padding-left: 15px;
+    padding: 0!important;
+
 
     &-price {
       font-weight: 500;
@@ -401,4 +415,17 @@ nz-tag {
   }
 }
 
+nz-checkbox-group {
+  label {
+    span {
+      font-size: 14px;
+    }
+  }
+}
 
+.regionCheckboxes {
+  label {
+    max-width: 300px;
+    width: 100%;
+  }
+}

@@ -16,7 +16,8 @@ export class CategoryItemComponent implements OnInit {
   inputFromMin: number = 0;
   inputToMax: number = 100000;
   inputToMin: number = 0;
-
+  visible = false;
+  listVisible = true;
 
   cards = [
     {
@@ -32,21 +33,51 @@ export class CategoryItemComponent implements OnInit {
     {
       id: 2,
       imageUrl: "../../../../../assets/categories/2.jpg",
-      title: "Қизил Юсуф памидори",
+      title: "Бинафша Шоҳ Нўхати",
       supplier: "МЧЖ \"Green technology\"",
       description: "Ўсимликнинг баландлиги 1 метрга етади, екиш пайтида уни зарур ишларни амалга ошириш керак. Озиқ-овқат маҳсулотларидан ташқари, нўхат жуда декоратив кўриришга ега бўлади. ",
-      price: 459000000,
-      weight: 100000,
+      price: 253000000,
+      weight: 65000,
       tags: ["Томат", "Бодринг", "Сабзи", "Карам", "Карам"]
     },
     {
       id: 3,
       imageUrl: "../../../../../assets/categories/3.jpg",
+      title: "Мелотрия Колибри",
+      supplier: "МЧЖ \"Green technology\"",
+      description: "Ўсимликнинг баландлиги 1 метрга етади, екиш пайтида уни зарур ишларни амалга ошириш керак. Озиқ-овқат маҳсулотларидан ташқари, нўхат жуда декоратив кўриришга ега бўлади. ",
+      price: 123000000,
+      weight: 5489,
+      tags: ["Томат", "Бодринг", "Сабзи", "Карам", "Карам"]
+    },
+    {
+      id: 4,
+      imageUrl: "../../../../../assets/categories/3.jpg",
+      title: "Қизил лавлаги",
+      supplier: "МЧЖ \"Green technology\"",
+      description: "Ўсимликнинг баландлиги 1 метрга етади, екиш пайтида уни зарур ишларни амалга ошириш керак. Озиқ-овқат маҳсулотларидан ташқари, нўхат жуда декоратив кўриришга ега бўлади. ",
+      price: 658000000,
+      weight: 54657,
+      tags: ["Томат", "Бодринг", "Сабзи", "Карам", "Карам"]
+    },
+    {
+      id: 5,
+      imageUrl: "../../../../../assets/categories/3.jpg",
       title: "Қизил Юсуф памидори",
       supplier: "МЧЖ \"Green technology\"",
       description: "Ўсимликнинг баландлиги 1 метрга етади, екиш пайтида уни зарур ишларни амалга ошириш керак. Озиқ-овқат маҳсулотларидан ташқари, нўхат жуда декоратив кўриришга ега бўлади. ",
-      price: 459000000,
-      weight: 100000,
+      price: 145000000,
+      weight: 23411,
+      tags: ["Томат", "Бодринг", "Сабзи", "Карам", "Карам"]
+    },
+    {
+      id: 6,
+      imageUrl: "../../../../../assets/categories/3.jpg",
+      title: "Қизил Юсуф памидори",
+      supplier: "МЧЖ \"Green technology\"",
+      description: "Ўсимликнинг баландлиги 1 метрга етади, екиш пайтида уни зарур ишларни амалга ошириш керак. Озиқ-овқат маҳсулотларидан ташқари, нўхат жуда декоратив кўриришга ега бўлади. ",
+      price: 963000000,
+      weight: 567,
       tags: ["Томат", "Бодринг", "Сабзи", "Карам", "Карам"]
     },
   ]
@@ -86,9 +117,7 @@ export class CategoryItemComponent implements OnInit {
     {label: 'Тошкент ', value: 'Ташкент', checked: true},
   ];
 
-  constructor(private fb: FormBuilder) {
-
-  }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.filterForm = this.fb.group({
@@ -100,6 +129,10 @@ export class CategoryItemComponent implements OnInit {
       region: [this.checkOptionsFour],
       slider: [[this.min, this.max]]
     });
+  }
+
+  ask() {
+    this.cards.sort((item: any) => item.title)
   }
 
   submitForm(): void {
@@ -149,5 +182,21 @@ export class CategoryItemComponent implements OnInit {
   sliderChange(event: any) {
     this.filterForm.controls.fromPrice.setValue(event[0]);
     this.filterForm.controls.toPrice.setValue(event[1])
+  }
+
+  open(): void {
+    this.visible = true;
+  }
+
+  close(): void {
+    this.visible = false;
+  }
+
+  listVis() {
+    this.listVisible = true
+  }
+
+  cardVis() {
+    this.listVisible = false
   }
 }

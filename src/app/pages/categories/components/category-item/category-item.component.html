@@ -13,8 +13,7 @@
       <div class="categoryList__header-subtitle">211 маҳсулотлари</div>
     </div>
     <div class="categoryList__main" nz-row [nzGutter]="[20, 10]">
-
-      <div class="categoryList__main-filter filter" nz-col nzSpan="4">
+      <div class="categoryList__main-filter filter mainFilter" nz-col nzLg="4">
         <form nz-form nzLayout="vertical" [formGroup]="filterForm" (ngSubmit)="submitForm()">
           <nz-form-item>
             <nz-form-label class="filter__title">Категория</nz-form-label>
@@ -28,11 +27,11 @@
               <nz-slider nzRange [nzMax]="max" [nzMin]="min" formControlName="slider" (nzOnAfterChange)="sliderChange($event)"></nz-slider>
             </nz-form-control>
           </nz-form-item>
-          <nz-form-item>
+          <nz-form-item class="filter__fromPrice-input">
             <nz-form-control>
               <label>
-<!--                <input nz-input [min]="min" [max]="max" (ngModelChange)="onChangeSliderMin($event)" placeholder="0 сум" formControlName="fromPrice" />-->
                 <nz-input-number
+                  class="filter__input"
                   formControlName="fromPrice"
                   [nzMin]="inputFromMin"
                   [nzMax]="inputFromMax"
@@ -46,6 +45,7 @@
             <nz-form-control>
               <label>
                 <nz-input-number
+                  class="filter__input"
                   formControlName="toPrice"
                   [nzMin]="inputToMin"
                   [nzMax]="inputToMax"
@@ -81,223 +81,23 @@
           </nz-form-item>
 
           <nz-form-item>
-            <nz-form-control>
-              <button nz-button nzType="primary">Submit</button>
-              <button nz-button (click)="resetForm($event)">Reset</button>
+            <nz-form-control nz-row>
+              <button nz-col nzSpan="24" nzShape="round" class="btn__submit" nz-button nzType="primary">Submit</button>
+              <button nz-col nzSpan="24" nzShape="round" class="btn__reset" nz-button (click)="resetForm($event)">Reset</button>
             </nz-form-control>
           </nz-form-item>
         </form>
-
       </div>
-      <div class="categoryList__main-items" nz-col nzSpan="20">
-        <div class="seeds__cards" >
-          <div class="categoryItem" nz-row nzAlign="middle" nzJustify="space-between" [nzGutter]="[0, 25]" *ngFor="let item of cards">
-            <img class="categoryItem__img" nz-col nzXs="24" nzSm="5" nzMd="5" nzXl="5" src="{{item.imageUrl}}"
-                 alt="category card item">
-            <div nz-col nzXs="24" nzSm="16" nzMd="11" nzXl="13" class="categoryItem__info">
-              <h3 class="categoryItem__info-title">{{item.title}}</h3>
-              <span class="categoryItem__info-subtitle">{{item.supplier}}</span>
-              <p class="categoryItem__info-text">{{item.description}}</p>
-              <div class="categoryItem__tags">
-                <nz-tag *ngFor="let tag of item.tags">{{tag}}</nz-tag>
-              </div>
-            </div>
-            <div nz-col nzXs="24" nzSm="24" nzMd="7" nzXl="6" class="categoryItem__calculates">
-              <div class="modifyXs" nz-row nzAlign="middle" style="text-align: center; width: 100%">
-                <div nz-col>
-                  <h5 class="categoryItem__calculates-price">{{item.price}} сум</h5>
-                  <div class="categoryItem__calculates-count">
-                    <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="minus" nzTheme="outline"></i>
-                    </button>
-                    <span class="categoryItem__calculates-count__number">{{item.weight}} Кг</span>
-                    <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i>
-                    </button>
-                  </div>
-                </div>
-                <div nz-col>
-                  <div class="categoryItem__calculates-links">
-                    <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="message" nzTheme="outline"></i>
-                    </button>
-                    <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="heart" nzTheme="outline"></i>
-                    </button>
-                    <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="phone" nzTheme="outline"></i>
-                    </button>
-                  </div>
-                  <button nzShape="round" class="categoryItem__calculates-btn" nz-button nzType="primary">Саватчага
-                    қўшиш
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div nz-card-grid class="itemCard">
-            <img src="../../../../../assets/card1.jpg" alt="cardImage">
-            <h3 class="itemCard__title">Қизил Юсуф памидори Самарқанд махсулоти</h3>
-            <p class="itemCard__subtitle">МЧЖ "AvtoServisGroup"</p>
-            <div class="itemCard__calc">
-              <div class="itemCard__calc-price">
-                <p class="price">4 590 000</p>
-                <span>сум / кг</span>
-              </div>
-              <div class="itemCard__calc-count">
-                <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="minus" nzTheme="outline"></i></button>
-                <span class="count">1000</span>
-                <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
-              </div>
-              <button class="submit__item" nz-button nzType="default" nzSize="large" nzShape="round">
-                Оставить заявку
-              </button>
-              <div class="itemCard__icons">
-                <button nz-button nzType="text"><i nz-icon nzType="message" nzTheme="outline"></i></button>
-                <button nz-button nzType="text"><i nz-icon nzType="heart" nzTheme="outline"></i></button>
-                <button nz-button nzType="text"><i nz-icon nzType="phone" nzTheme="outline"></i></button>
-              </div>
-            </div>
-          </div>
-          <div nz-card-grid class="itemCard">
-            <img src="../../../../../assets/card1.jpg" alt="cardImage">
-            <h3 class="itemCard__title">Қизил Юсуф памидори Самарқанд махсулоти</h3>
-            <p class="itemCard__subtitle">МЧЖ "AvtoServisGroup"</p>
-            <div class="itemCard__calc">
-              <div class="itemCard__calc-price">
-                <p class="price">4 590 000</p>
-                <span>сум / кг</span>
-              </div>
-              <div class="itemCard__calc-count">
-                <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="minus" nzTheme="outline"></i></button>
-                <span class="count">1000</span>
-                <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
-              </div>
-              <button class="submit__item" nz-button nzType="default" nzSize="large" nzShape="round">
-                Оставить заявку
-              </button>
-              <div class="itemCard__icons">
-                <button nz-button nzType="text"><i nz-icon nzType="message" nzTheme="outline"></i></button>
-                <button nz-button nzType="text"><i nz-icon nzType="heart" nzTheme="outline"></i></button>
-                <button nz-button nzType="text"><i nz-icon nzType="phone" nzTheme="outline"></i></button>
-              </div>
-            </div>
-          </div>
-          <div nz-card-grid class="itemCard">
-            <img src="../../../../../assets/card1.jpg" alt="cardImage">
-            <h3 class="itemCard__title">Қизил Юсуф памидори Самарқанд махсулоти</h3>
-            <p class="itemCard__subtitle">МЧЖ "AvtoServisGroup"</p>
-            <div class="itemCard__calc">
-              <div class="itemCard__calc-price">
-                <p class="price">4 590 000</p>
-                <span>сум / кг</span>
-              </div>
-              <div class="itemCard__calc-count">
-                <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="minus" nzTheme="outline"></i></button>
-                <span class="count">1000</span>
-                <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
-              </div>
-              <button class="submit__item" nz-button nzType="default" nzSize="large" nzShape="round">
-                Оставить заявку
-              </button>
-              <div class="itemCard__icons">
-                <button nz-button nzType="text"><i nz-icon nzType="message" nzTheme="outline"></i></button>
-                <button nz-button nzType="text"><i nz-icon nzType="heart" nzTheme="outline"></i></button>
-                <button nz-button nzType="text"><i nz-icon nzType="phone" nzTheme="outline"></i></button>
-              </div>
-            </div>
-          </div>
-          <div nz-card-grid class="itemCard">
-            <img src="../../../../../assets/card1.jpg" alt="cardImage">
-            <h3 class="itemCard__title">Қизил Юсуф памидори Самарқанд махсулоти</h3>
-            <p class="itemCard__subtitle">МЧЖ "AvtoServisGroup"</p>
-            <div class="itemCard__calc">
-              <div class="itemCard__calc-price">
-                <p class="price">4 590 000</p>
-                <span>сум / кг</span>
-              </div>
-              <div class="itemCard__calc-count">
-                <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="minus" nzTheme="outline"></i></button>
-                <span class="count">1000</span>
-                <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
-              </div>
-              <button class="submit__item" nz-button nzType="default" nzSize="large" nzShape="round">
-                Оставить заявку
-              </button>
-              <div class="itemCard__icons">
-                <button nz-button nzType="text"><i nz-icon nzType="message" nzTheme="outline"></i></button>
-                <button nz-button nzType="text"><i nz-icon nzType="heart" nzTheme="outline"></i></button>
-                <button nz-button nzType="text"><i nz-icon nzType="phone" nzTheme="outline"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!--<form class="categoryList__main-filter" nz-col nzSpan="5">
-        <div class="categoryList__main-subcategory">
-          <h4>Категории</h4>
-          <ul>
-            <li>Бодринг <span>304</span></li>
-            <li>Карам <span>296</span></li>
-            <li>Сабзи <span>173</span></li>
-            <li>Қалампир <span>173</span></li>
-          </ul>
-        </div>
-        <div class="categoryList__main-priceFilter">
-          <h4>Нарх, сўм</h4>
-          <nz-slider nzRange [(ngModel)]="slideValue"></nz-slider>
-          <input nz-input placeholder="Basic usage" [(ngModel)]="value"/>
-          <input nz-input placeholder="Basic usage" [(ngModel)]="value"/>
-        </div>
-        <div class="categoryList__main-payment">
-          <h4>Тўлов тури</h4>
-          <div class="checkboxes">
-            <label nz-checkbox [(ngModel)]="checked">Пул ўтказиш орқали</label>
-            <label nz-checkbox [(ngModel)]="checked">Нақт пул орқали</label>
-            <label nz-checkbox [(ngModel)]="checked">Карта орқали </label>
-          </div>
-        </div>
-        <div class="categoryList__main-delivery">
-          <h4>Этказиб бериш тури</h4>
-          <div class="checkboxes">
-            <label nz-checkbox [(ngModel)]="checked">Омборхонадан олиб кетиш</label>
-            <label nz-checkbox [(ngModel)]="checked">Ўзбекистон бўйлаб етказиб бериш</label>
-          </div>
-        </div>
-        <div class="categoryList__main-haggle">
-          <h4>Савдолашиш</h4>
-          <div class="checkboxes">
-            <label nz-checkbox [(ngModel)]="checked">Келишув асосида</label>
-            <label nz-checkbox [(ngModel)]="checked">Савдолашиш</label>
-          </div>
-        </div>
-        <div class="categoryList__main-haggle">
-          <h4>Худудлар</h4>
-          <div class="checkboxes">
-            <label nz-checkbox [(ngModel)]="checked">Андижон</label>
-            <label nz-checkbox [(ngModel)]="checked">Фарғона</label>
-            <label nz-checkbox [(ngModel)]="checked">Жиззах</label>
-            <label nz-checkbox [(ngModel)]="checked">Хоразм</label>
-            <label nz-checkbox [(ngModel)]="checked">Наманган</label>
-            <label nz-checkbox [(ngModel)]="checked">Навоий</label>
-            <label nz-checkbox [(ngModel)]="checked">Қашқадарё</label>
-            <label nz-checkbox [(ngModel)]="checked">Қорақалпоғистон</label>
-            <label nz-checkbox [(ngModel)]="checked">Самарқанд</label>
-            <label nz-checkbox [(ngModel)]="checked">Сирдарё</label>
-            <label nz-checkbox [(ngModel)]="checked">Сурхондарё</label>
-            <label nz-checkbox [(ngModel)]="checked">Тошкент</label>
-          </div>
-        </div>
-        <button nz-button nzType="primary" nzShape="round">Primary Button</button>
-        <button nz-button nzType="default" nzShape="round">Default Button</button>
-      </form>
-      <div class="categoryList__main-items" nz-col nzSpan="19">
-        <div class="category__cardFilter" nz-row nzAlign="middle">
-          <span nz-col nzSpan="2">Саралаш: </span>
-          <div nz-col nzSpan="20" class="category__cardFilter-sort">
-            <button nz-button nzType="text" nzShape="circle"><i nz-icon nzType="sort-ascending" nzTheme="outline"></i>
+      <div class="categoryList__main-items" nz-col nzMd="24" nzLg="20">
+        <div class="categoryList__items-filter" nz-row nzAlign="middle">
+          <div nz-col>
+            <span>Саралаш: </span>
+            <button nz-button nzType="text" (click)="ask()" nzShape="circle"><i nz-icon nzType="sort-ascending" nzTheme="outline"></i>
             </button>
             <button nz-button nzType="text" nzShape="circle"><i nz-icon nzType="sort-descending" nzTheme="outline"></i>
             </button>
             <button nz-button nzType="text" nzShape="circle"><i nz-icon>
-              <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="20" height="20" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M0.258805 3.95934L3.79452 0.29247C3.97532 0.105192 4.22041 0 4.47595 0C4.73148 0 4.97657 0.105192 5.15738 0.29247L8.69309 3.95934C8.78783 4.05089 8.86382 4.1613 8.91652 4.28397C8.96923 4.40664 8.99757 4.53907 8.99985 4.67335C9.00213 4.80763 8.97832 4.941 8.92982 5.06553C8.88132 5.19005 8.80913 5.30317 8.71757 5.39813C8.626 5.4931 8.51693 5.56796 8.39686 5.61826C8.27679 5.66856 8.14818 5.69326 8.0187 5.69089C7.88923 5.68852 7.76154 5.65913 7.64325 5.60447C7.52497 5.54981 7.41851 5.471 7.33023 5.37275L5.44023 3.41264L5.44023 14.9999C5.44023 15.2652 5.33864 15.5195 5.1578 15.7071C4.97696 15.8946 4.73169 16 4.47595 16C4.2202 16 3.97493 15.8946 3.79409 15.7071C3.61326 15.5195 3.51166 15.2652 3.51166 14.9999L3.51166 3.41264L1.62166 5.37275C1.43887 5.5494 1.19709 5.64557 0.947276 5.641C0.69746 5.63643 0.459108 5.53147 0.282434 5.34824C0.105761 5.16502 0.00455856 4.91782 0.000150681 4.65874C-0.0042572 4.39966 0.0884733 4.14892 0.258805 3.95934Z"
                   fill="#3E3E3E"/>
@@ -307,7 +107,7 @@
               </svg>
             </i></button>
             <button nz-button nzType="text" nzShape="circle"><i nz-icon>
-              <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="20" height="20" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M8.7412 12.0407L5.20548 15.7075C5.02468 15.8948 4.77959 16 4.52405 16C4.26852 16 4.02343 15.8948 3.84262 15.7075L0.306911 12.0407C0.212171 11.9491 0.136182 11.8387 0.0834782 11.716C0.0307742 11.5934 0.00243451 11.4609 0.00015007 11.3267C-0.00213437 11.1924 0.021683 11.059 0.0701815 10.9345C0.11868 10.8099 0.190866 10.6968 0.282433 10.6019C0.374 10.5069 0.483072 10.432 0.603142 10.3817C0.723213 10.3314 0.851822 10.3067 0.981297 10.3091C1.11077 10.3115 1.23846 10.3409 1.35675 10.3955C1.47503 10.4502 1.58149 10.529 1.66977 10.6273L3.55977 12.5874V1.00006C3.55977 0.734824 3.66136 0.480456 3.8422 0.292909C4.02304 0.105363 4.26831 0 4.52405 0C4.7798 0 5.02507 0.105363 5.20591 0.292909C5.38674 0.480456 5.48834 0.734824 5.48834 1.00006V12.5874L7.37834 10.6273C7.56113 10.4506 7.80291 10.3544 8.05272 10.359C8.30254 10.3636 8.54089 10.4685 8.71757 10.6518C8.89424 10.835 8.99544 11.0822 8.99985 11.3413C9.00426 11.6003 8.91153 11.8511 8.7412 12.0407Z"
                   fill="#3E3E3E"/>
@@ -318,86 +118,176 @@
             </i>
             </button>
           </div>
-          <div nzSpan="2" nz-col class="category__cardFilter-positionIcon">
-            <button nz-button nzType="text" nzShape="circle"><i nz-icon nzType="bars" nzTheme="outline"></i></button>
-            <button nz-button nzType="text" nzShape="circle"><i nz-icon nzType="appstore" nzTheme="outline"></i>
-            </button>
+          <div nz-col class="categoryList__card-visibleStyle" style="margin-left: auto">
+            <button nz-button class="toInvisibleIcon" nzShape="circle" nzType="text" (click)="listVis()"><i nz-icon nzType="unordered-list" nzTheme="outline"></i></button>
+            <button nz-button class="toInvisibleIcon" nzShape="circle" nzType="text" (click)="cardVis()"><i nz-icon nzType="appstore" nzTheme="outline"></i></button>
+            <button nz-button class="filter-icon" nzShape="circle" nzType="text" (click)="open()"><i nz-icon nzType="filter" nzTheme="outline"></i> <span>Фильтр</span></button>
           </div>
         </div>
-        <div class="seeds__cards">
-          <div class="categoryItem" nz-row nzAlign="middle" nzJustify="space-between" [nzGutter]="[0, 25]">
-            <img class="categoryItem__img" nz-col nzXs="24" nzSm="5" nzMd="5" nzXl="5"
-                 src="../../../../../assets/categories/1.jpg"
-                 alt="category card item">
-            <div nz-col nzXs="24" nzSm="16" nzMd="11" nzXl="13" class="categoryItem__info">
-              <h3 class="categoryItem__info-title">Қизил Юсуф памидори</h3>
-              <span class="categoryItem__info-subtitle">МЧЖ "Green technology"</span>
-              <p class="categoryItem__info-text">Ўсимликнинг баландлиги 1 метрга етади, екиш пайтида уни зарур ишларни
-                амалга ошириш керак. Озиқ-овқат маҳсулотларидан ташқари, нўхат жуда декоратив кўриришга ега бўлади.</p>
-              <div class="categoryItem__tags">
-                <nz-tag>Томат</nz-tag>
-                <nz-tag>Томат</nz-tag>
-                <nz-tag>Томат</nz-tag>
-                <nz-tag>Томат</nz-tag>
-                <nz-tag>Томат</nz-tag>
-              </div>
-            </div>
-            <div nz-col nzXs="24" nzSm="24" nzMd="7" nzXl="6" class="categoryItem__calculates">
-              <div class="modifyXs" nz-row nzAlign="middle" style="text-align: center; width: 100%">
-                <div nz-col>
-                  <h5 class="categoryItem__calculates-price">11111 сум</h5>
-                  <div class="categoryItem__calculates-count">
-                    <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="minus" nzTheme="outline"></i>
-                    </button>
-                    <span class="categoryItem__calculates-count__number">100000 Кг</span>
-                    <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i>
-                    </button>
-                  </div>
+        <div class="seeds__cards" nz-row>
+          <!--list visible-->
+          <div *ngIf="listVisible; else cardVisible">
+            <div class="categoryItem"  nz-row nzAlign="middle" nzJustify="space-between" [nzGutter]="[0, 25]" *ngFor="let item of cards">
+              <img class="categoryItem__img" nz-col nzXs="24" nzSm="5" nzMd="5" nzXl="5" src="{{item.imageUrl}}"
+                   alt="category card item">
+              <div nz-col nzXs="24" nzSm="16" nzMd="11" nzXl="13" class="categoryItem__info">
+                <h3 class="categoryItem__info-title">{{item.title}}</h3>
+                <span class="categoryItem__info-subtitle">{{item.supplier}}</span>
+                <p class="categoryItem__info-text">{{item.description}}</p>
+                <div class="categoryItem__tags">
+                  <nz-tag *ngFor="let tag of item.tags">{{tag}}</nz-tag>
                 </div>
-                <div nz-col>
-                  <div class="categoryItem__calculates-links">
-                    <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="message"
-                                                                           nzTheme="outline"></i>
-                    </button>
-                    <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="heart" nzTheme="outline"></i>
-                    </button>
-                    <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="phone" nzTheme="outline"></i>
+              </div>
+              <div nz-col nzXs="24" nzSm="24" nzMd="6"  class="categoryItem__calculates">
+                <div class="modifyXs" nz-row nzAlign="middle" nzJustify="center" style="text-align: center; width: 100%">
+                  <div nz-col>
+                    <h5 class="categoryItem__calculates-price">{{item.price}} сум</h5>
+                    <div class="categoryItem__calculates-count">
+                      <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="minus" nzTheme="outline"></i>
+                      </button>
+                      <span class="categoryItem__calculates-count__number">{{item.weight}} Кг</span>
+                      <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div nz-col>
+                    <div class="categoryItem__calculates-links">
+                      <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="message" nzTheme="outline"></i>
+                      </button>
+                      <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="heart" nzTheme="outline"></i>
+                      </button>
+                      <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="phone" nzTheme="outline"></i>
+                      </button>
+                    </div>
+                    <button nzShape="round" class="categoryItem__calculates-btn" nz-button nzType="primary">Саватчага
+                      қўшиш
                     </button>
                   </div>
-                  <button nzShape="round" class="categoryItem__calculates-btn" nz-button nzType="primary">Оставить заявку
-                  </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div nz-card-grid class="itemCard">
-          <img src="../../../../../assets/card1.jpg" alt="cardImage">
-          <h3 class="itemCard__title">Қизил Юсуф памидори Самарқанд махсулоти</h3>
-          <p class="itemCard__subtitle">МЧЖ "AvtoServisGroup"</p>
-          <div class="itemCard__calc">
-            <div class="itemCard__calc-price">
-              <p class="price">4 590 000</p>
-              <span>сум / кг</span>
+          <!--card visible-->
+          <ng-template #cardVisible>
+            <div nz-card-grid nz-col class="itemCard" *ngFor="let item of cards">
+              <img src="{{item.imageUrl}}" alt="cardImage">
+              <h3 class="itemCard__title">{{item.title}}</h3>
+              <p class="itemCard__subtitle">{{item.supplier}}</p>
+              <div class="itemCard__calc">
+                <div class="itemCard__calc-price">
+                  <p class="price">{{item.price}}</p>
+                  <span>сум / кг</span>
+                </div>
+                <div class="itemCard__calc-count">
+                  <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="minus" nzTheme="outline"></i></button>
+                  <span class="count">{{item.weight}}</span>
+                  <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
+                </div>
+                <button class="submit__item" nz-button nzType="default" nzSize="large" nzShape="round">
+                  Оставить заявку
+                </button>
+                <div class="itemCard__icons">
+                  <button nz-button nzType="text"><i nz-icon nzType="message" nzTheme="outline"></i></button>
+                  <button nz-button nzType="text"><i nz-icon nzType="heart" nzTheme="outline"></i></button>
+                  <button nz-button nzType="text"><i nz-icon nzType="phone" nzTheme="outline"></i></button>
+                </div>
+              </div>
             </div>
-            <div class="itemCard__calc-count">
-              <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="minus" nzTheme="outline"></i></button>
-              <span class="count">1000</span>
-              <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
-            </div>
-            <button class="submit__item" nz-button nzType="default" nzSize="large" nzShape="round">
-              Оставить заявку
-            </button>
-            <div class="itemCard__icons">
-              <button nz-button nzType="text"><i nz-icon nzType="message" nzTheme="outline"></i></button>
-              <button nz-button nzType="text"><i nz-icon nzType="heart" nzTheme="outline"></i></button>
-              <button nz-button nzType="text"><i nz-icon nzType="phone" nzTheme="outline"></i></button>
-            </div>
-          </div>
-        </div>
+          </ng-template>
 
-      </div>-->
+        </div>
+        <nz-pagination class="paginationItemList" [nzPageIndex]="1" [nzTotal]="50" style="text-align: center"></nz-pagination>
+      </div>
     </div>
   </div>
 </div>
+
+
+<!--DRAWER-->
+<nz-drawer
+  [nzClosable]="true"
+  [nzVisible]="visible"
+  nzPlacement="right"
+  nzTitle="Фильтр"
+  (nzOnClose)="close()"
+  nzWidth="280"
+>
+  <ng-container *nzDrawerContent>
+    <div class="categoryList__main-filter filter filter-drawer" nz-col nzLg="4">
+      <form nz-form nzLayout="vertical" [formGroup]="filterForm" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <ul nz-menu nzMode="inline">
+            <li nz-submenu nzTitle="Категория">
+              <ul>
+                <li nz-menu-item class="filter__items-list" *ngFor="let type of typesCat">{{type.name}}</li>
+              </ul>
+            </li>
+          </ul>
+        </nz-form-item >
+        <div nz-row nzJustify="space-around">
+          <nz-form-label  nz-col nzSpan="24" class="filter__title">Нарх, сўм</nz-form-label>
+          <nz-form-item nz-col nzSpan="11" class="filter__fromPrice-input">
+            <nz-form-control>
+              <label>
+                <nz-input-number
+                  class="filter__input"
+                  formControlName="fromPrice"
+                  [nzMin]="inputFromMin"
+                  [nzMax]="inputFromMax"
+                  [nzStep]="100"
+                  (ngModelChange)="onChangeMin($event)"
+                ></nz-input-number>
+              </label>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item nz-col nzSpan="11" class="filter__fromPrice-input">
+            <nz-form-control>
+              <label>
+                <nz-input-number
+                  class="filter__input"
+                  formControlName="toPrice"
+                  [nzMin]="inputToMin"
+                  [nzMax]="inputToMax"
+                  [nzStep]="100"
+                  (ngModelChange)="onChangeMax($event)"
+                ></nz-input-number>
+              </label>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <nz-form-item>
+          <nz-form-label class="filter__title">Тўлов тури</nz-form-label>
+          <nz-form-control>
+            <nz-checkbox-group class="regionCheckboxes" formControlName="payment"></nz-checkbox-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label class="filter__title">Этказиб бериш тури</nz-form-label>
+          <nz-form-control>
+            <nz-checkbox-group class="regionCheckboxes" formControlName="delivery"></nz-checkbox-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label class="filter__title">Савдолашиш</nz-form-label>
+          <nz-form-control>
+            <nz-checkbox-group class="regionCheckboxes" formControlName="haggle"></nz-checkbox-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label class="filter__title">Худудлар</nz-form-label>
+          <nz-form-control>
+            <nz-checkbox-group class="regionCheckboxes" formControlName="region"></nz-checkbox-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nz-row>
+            <button style="margin: 15px auto" nz-col nzSpan="12" nzShape="round" class="btn__submit" nz-button nzType="primary">Submit</button>
+            <button style="margin: auto" nz-col nzSpan="12" nzShape="round" class="btn__reset" nz-button (click)="resetForm($event)">Reset</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </ng-container>
+</nz-drawer>
